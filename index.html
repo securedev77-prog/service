@@ -1,35 +1,29 @@
+
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio</title>
+    <title>Photo Gallery</title>
 </head>
-<body style="background-color: #0d1117; color: #c9d1d9; text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 50px 20px;">
-    
-    <div style="max-width: 350px; margin: auto; background: #161b22; border: 1px solid #30363d; border-radius: 20px; padding: 25px; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
+<body style="background-color: #f0f2f5; font-family: sans-serif; text-align: center;">
+
+    <div style="margin-top: 50px;">
+        <h3>My Collection</h3>
+        <p>Click the image to view details.</p>
         
-        <img src="target.jpg" alt="Profile" style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #58a6ff; margin-bottom: 15px;">
-        
-        <h2 style="color: #58a6ff; font-size: 20px;">স্বাগতম</h2>
-        <p style="font-size: 14px; line-height: 1.6;">আরও তথ্যের জন্য বা সরাসরি যোগাযোগ করতে নিচের বাটনে ক্লিক করুন।</p>
-        
-        <button id="tgBtn" style="background-color: #238636; color: white; padding: 12px 25px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 16px; width: 100%; margin-top: 20px;">
-            আমার সাথে যোগাযোগ করুন
-        </button>
+        <div onclick="openLink()" style="cursor: pointer; display: inline-block; padding: 10px; background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <img src="target.jpg" alt="Profile" style="width: 250px; border-radius: 5px;">
+            <p style="font-weight: bold; color: #007bff;">Click to Open</p>
+        </div>
     </div>
 
     <script>
-        // আপনার টেলিগ্রাম লিঙ্কটিকে Base64 করে এখানে দিন যাতে গুগল বট বুঝতে না পারে
-        // উদাহরণ: https://t.me/YOUR_TELEGRAM_ID কে এনকোড করলে নিচের মতো দেখাবে
-        const encodedUrl = "aHR0cHM6Ly90Lm1lL1lPVVJfVEVMRUdSQU1fSUQ="; 
-
-        document.getElementById("tgBtn").onclick = function() {
-            const decodedUrl = atob(encodedUrl);
-            window.location.href = decodedUrl;
-        };
+        function openLink() {
+            // আপনার টেলিগ্রাম লিঙ্কটি এখানে দিন
+            window.location.href = "https://t.me/YOUR_TELEGRAM_ID";
+        }
     </script>
 
 </body>
 </html>
-
