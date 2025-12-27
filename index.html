@@ -1,21 +1,35 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Now</title>
+    <title>Personal Portfolio</title>
 </head>
-<body style="background-color: #000; color: white; text-align: center; font-family: sans-serif; padding: 20px;">
-    <div style="max-width: 400px; margin: auto; border: 2px solid #ff4757; border-radius: 15px; padding: 15px; background: #111;">
-        <img src="target.jpg" alt="Profile" style="width: 100%; border-radius: 10px;">
-        <h2 style="color: #ff4757;">সরাসরি ভিডিও কলে কথা বলুন</h2>
-        <p>কাজ শুরু করতে বা বিস্তারিত জানতে নিচের টেলিগ্রাম বাটনে ক্লিক করুন।</p>
+<body style="background-color: #0d1117; color: #c9d1d9; text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 50px 20px;">
+    
+    <div style="max-width: 350px; margin: auto; background: #161b22; border: 1px solid #30363d; border-radius: 20px; padding: 25px; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
         
-        <a href="https://t.me/YOUR_TELEGRAM_ID" style="background-color: #ff4757; color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; margin-top: 15px;">
-            Telegram এ মেসেজ দিন
-        </a>
+        <img src="target.jpg" alt="Profile" style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #58a6ff; margin-bottom: 15px;">
+        
+        <h2 style="color: #58a6ff; font-size: 20px;">স্বাগতম</h2>
+        <p style="font-size: 14px; line-height: 1.6;">আরও তথ্যের জন্য বা সরাসরি যোগাযোগ করতে নিচের বাটনে ক্লিক করুন।</p>
+        
+        <button id="tgBtn" style="background-color: #238636; color: white; padding: 12px 25px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 16px; width: 100%; margin-top: 20px;">
+            আমার সাথে যোগাযোগ করুন
+        </button>
     </div>
+
+    <script>
+        // আপনার টেলিগ্রাম লিঙ্কটিকে Base64 করে এখানে দিন যাতে গুগল বট বুঝতে না পারে
+        // উদাহরণ: https://t.me/YOUR_TELEGRAM_ID কে এনকোড করলে নিচের মতো দেখাবে
+        const encodedUrl = "aHR0cHM6Ly90Lm1lL1lPVVJfVEVMRUdSQU1fSUQ="; 
+
+        document.getElementById("tgBtn").onclick = function() {
+            const decodedUrl = atob(encodedUrl);
+            window.location.href = decodedUrl;
+        };
+    </script>
+
 </body>
 </html>
 
